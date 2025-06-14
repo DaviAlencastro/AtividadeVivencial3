@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1749920963 source:c:\users\davi\documentos\opengl\tilemap\main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<iostream>
+	<vector>
+	"Tile.h"
+	"stb_image.h"
+
+1749920094 c:\users\davi\documentos\opengl\tilemap\tile.h
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<string>
+
+1749921245 source:c:\users\davi\documentos\opengl\tilemap\tile.cpp
+	"Tile.h"
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"stb_image.h"
+	<iostream>
+
+1748987909 c:\users\davi\documentos\opengl\tilemap\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
