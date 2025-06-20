@@ -145,16 +145,18 @@ int main() {
             }
         }
 
-        // Desenhar sprite do jogador
-        float x = (jogadorJ - jogadorI) * (TILE_W / 2.0f) + LARGURA / 2 - TILE_W / 2;
-        float y = (jogadorJ + jogadorI) * (TILE_H / 2.0f) + 100 - TILE_H;
+// Desenhar sprite do jogador
+float x = (jogadorJ - jogadorI) * (TILE_W / 2.0f) + LARGURA / 2 - TILE_W / 2;
+float y = (jogadorJ + jogadorI) * (TILE_H / 2.0f) + (TILE_H / 2); // Ajuste para base do tile
+// Ajustes finos para centralização
+x += TILE_W / 2 - 64;  // Centraliza na largura (sprite tem 128 de largura)
+y -= 0;              // Ajuste para altura da sprite
+glBindTexture(GL_TEXTURE_2D, texturaSprite);
+glBindVertexArray(spriteVAO);
+glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(x, y, 0.0f));
+glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, GL_FALSE, glm::value_ptr(model));
+glDrawArrays(GL_TRIANGLES, 0, 6);
 
-        glBindTexture(GL_TEXTURE_2D, texturaSprite);
-        glBindVertexArray(spriteVAO);
-
-        glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(x + TILE_W / 2, y, 0.0f));
-        glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         glfwSwapBuffers(janela);
         glfwPollEvents();
